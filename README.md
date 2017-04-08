@@ -1,0 +1,2 @@
+# Seminar
+Repozitorij diplomskog seminara
