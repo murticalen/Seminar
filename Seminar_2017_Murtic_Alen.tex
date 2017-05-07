@@ -20,6 +20,8 @@ Ovaj seminarski rad opisuje potrebu i korist \textit{data mininga} u sportu, pos
 
 \section{Potreba i korist data mininga u sportu}
 
+Ovo poglavlje bavi se razlozima korištenja \textit{data mininga} u sportu prolazeći kroz 3 točke: izvorišne ideje te potrebe za deskriptivnom odnosno prediktivnom analizom. Važno je naglasiti da niti jedan sustav nije napravljen isključivo s ciljem zadovoljavanja neke od točaka, već je ovo jedan pokušaj klasifikacije područja kojima se \textit{data mining} u sportu bavi.
+
 \subsection{Izvorišne ideje}
 Većina ideja statističke analize u sportu dolazi iz baseballa, a za to postoje jasni razlozi:
 \newline
@@ -30,35 +32,47 @@ Većina ideja statističke analize u sportu dolazi iz baseballa, a za to postoje
 3. njime dominira statistika, pogledom na detaljne rezultate od prije 100-injak godina može se razumjeti mnogo više o utakmicama nego kod ikojeg drugog sporta.
 \newline
 
-U engleskom jeziku postoji izraz sabermetrics koji označava korištenje statistike u cilju razumijevanja baseballa (danas se koristi i u kontekstu ostalih sportova), a potječe od organizacije SABR (Society for American Baseball Research) nastale 1971. s ciljem elemenata tog sporta. Specifičnost organizacije je u tome da je sačinjena od novinara, bivših igrača, navijača, statističara i ostalih dionika sporta kako bi pružila što širi i točniji pogled na teme koje ju zanimaju.
+U engleskom jeziku postoji izraz \textit{sabermetrics} koji označava korištenje statistike u cilju razumijevanja baseballa (danas se koristi i u kontekstu ostalih sportova), a potječe od organizacije SABR (Society for American Baseball Research) nastale 1971. s ciljem elemenata tog sporta. Specifičnost organizacije je u tome da je sačinjena od novinara, bivših igrača, navijača, statističara i ostalih dionika sporta kako bi pružila što širi i točniji pogled na teme koje ju zanimaju.
 
-Pravi rast data mininga u baseballu počinje kasnih 1990-ih i ranih 2000-ih, a najviše ga simboliziraju dvojica menadžera Billy Beane i Theo Epstein. Billy Beane je 1998. postao generalni menadžer (GM) Oakland Athleticsa, momčadi s prilično ograničenim budžetom u odnosu na protivnike. Beane je osmislio princip nazvan Moneyball, ideju kupovine podcijenjenih igrača u cilju optimizacije potrošnje novca. Igrače je evaluirao analitičkim metodama zasnovanim na matematici. Beane je godinama imao značajno bolje rezultate od mnogih skupljih momčadi, ali Oakland nije uspio osvojiti ligu. Theo Epstein je 2002. sa samo 28 godina postao GM Boston Red Soxa, kluba koje je 84 bio bez trofeja prvaka. Samo 2 godine kasnije uspjeli su osvojiti naslov te to ponoviti 2007. 2016. je uspio sličan pothvat s Chicago Cubsima. Njegov uspjeh je analitičkom pristupu u sportu dao velik zamah.
+Pravi rast data mininga u baseballu počinje kasnih 1990-ih i ranih 2000-ih, a najviše ga simboliziraju dvojica menadžera Billy Beane i Theo Epstein. Billy Beane je 1998. postao generalni menadžer (GM) Oakland Athleticsa, momčadi s prilično ograničenim budžetom u odnosu na protivnike. Beane je osmislio princip nazvan Moneyball, ideju kupovine podcijenjenih igrača u cilju optimizacije potrošnje novca. Igrače je evaluirao analitičkim metodama zasnovanim na matematici. Beane je godinama imao značajno bolje rezultate od mnogih skupljih momčadi, ali Oakland nije uspio osvojiti ligu. Theo Epstein je 2002. sa samo 28 godina postao GM Boston Red Soxa, kluba koje je 84 bio bez trofeja prvaka. Samo 2 godine kasnije uspjeli su osvojiti naslov te to ponoviti 2007.
 
-\subsection{Potrebe za desktiptivnom analizom}
+Dominacija statistike u baseballu pomiješana s američkom zabranom tradicionalnog klađenja dovela je do značajnog razvoja amaterskog data mininga za \textit{fantasy baseball} (natjecanja u kojima sudionici biraju igrače, a birana močad s najboljom ukupnom statistikom pobjeđuje, a njezin autor dobiva nagradu). Vrhunski igrači često postaju zaposlenici profesionalnih klubova. Takva intelektualna širina zaslužna je za konstantan napredak \textit{data mininga} u baseballu.
+
+\subsection{Potreba za desktiptivnom analizom}
+
+Potreba za desktiptivnom analizom na bazičnoj razini prilično je očita - što više točnih informacija uvijek je bolje nego manje. No, budući da se ne možemo baviti svime, potrebno je identificirati ključne podatke koje želimo saznati.
 
 \subsubsection{Raspodjela resursa}
-- minute, novci
+Neizbježna činjenica svakodnevnog života ili upravljanja bilo kojom vrstom organizacije je ograničenost resursa, stoga ona očito vrijedi i za sportske klubove. Resurse koje klubovi imaju možemo podijeliti u 2 skupine: sportski i financijski. 
+\newline
+Kao financijski resurs razmatramo novac koji može biti siguran ili potencijalan, baš kao kod svakog poduzeća, no specifičnost sporta u odnosu na većinu drugih djelatnosti da postoji i potpuno siguran budući novac (npr. minimalne naknade za TV prava na kraju sezone). Raspodjela financijskih resursa u sportu bavi se vjerojatnošću postizanja određenih sportskih i/li financijskih (npr. dividende vlasnicima, vraćanje kredita za stadion) ciljeva uz investiciju financijskih u sportske resurse. Standardno pitanje ovog područja je "Isplati li se potrošiti 
+iznos x na odštetu/plaću igrača y?".
+\newline
+Sportski resursi vrlo su različiti od sporta do sporta, pa i između različitih liga istog sporta te navodim najčešće: dostupna minutaža, vrijeme treniranja, zdravlje igrača, dozvoljeni negativni rezultati do ostvarenja cilja, izbori na \textit{draftu} i sl. Oni mogu biti jednaki za sve momčadi (npr. dostupna minutaža), no kao što se vidi u popisu, uglavnom nisu, stoga je njihova analiza još izazovnija i zanimljivija. Dobar dio sportskih resursa nužno je opisivati i prediktivno kako bi saznali kvalitetnije informacije u cilju donošenja odluka.
 
 \subsubsection{Analiza kvalitete i stila vlastite momčadi}
+Izvorišna ideja deskriptivne analize je razumijevanje prednosti i mana vlastite momčadi kako bi treneri i/li sportski direktori imali točne informacije. Prvenstveno tražimo opis igrača u različitim ulogama kako bi otkrili alternativne strategije igranja ili kupovine novih igrača. Analiza kvalitete bavi se pretvorbom konkretnih podataka iz utakmica ili treninga u što jasniji opis, tj. pronalaženjem podataka koji ne bi bili uočeni.
 
-
-\subsubsection{Pronalaženje optimalne strategije}
-
+\subsubsection{Optimiranje strategije}
+Optimiranje strategije izravno je poduprto znanjem dobivenim iz prethodne dvije točke. Umjesto da ovisimo o kreativnosti ljudi, optimiranje strategije nalazi daje ocjenu različitih strateških opcija te sugerira one koje sustav vidi kao najbolje.
 
 \subsubsection{Analiza protivnika}
-- dug i naporan proces skratiti što je više moguće
+Kvalitetna analiza protivnika dug je i naporan proces koji bi trebalo pojednostaviti što je više moguće. Ona zapravo radi na sličan način kao optimiranje strategije, samo što traži najčešće protivnikove ideje i mane te njegov stil protiv momčadi kao naše. Nalazi se na granici opisa i predviđanja.
 
 \subsubsection{Procjena slučajnosti}
 Donošenje odluka u svakom sportu, a posebno nogometu, je često temeljeno na pitanju: učiniti promjenu ili ne? Treba li klub dati otkaz treneru, treba li trener zamijeniti napadača koji ne postiže golove nekoliko utakmica, promijeniti taktiku ili ne i sl.? Analitički pristup može dati odgovor koja je vjerojatnost da se dogodio negativan ishod utakmice uz igru koju je momčad pružila. Nekad je lako shvatiti da je protivnički vratar imao odličan dan i da je zato naš tim izgubio, ali u pravilu je teško objektivno procijeniti je li nešto slučajnost ili realnost, pogotovo ako se klub nalazi u zoni ispadanja. Npr. u sezoni 2011.-12. Wigan FC je imao katastrofalne rezultate prvih 29 kola engleske Premier lige, iako su očito igrali kvalitetno. No, klub nije dao otkaz treneru i sezonu je završio s 9 pobjeda iz 11 utakmica i spasio se od ispadanja. Takva strpljivost je rijetka, a dubinska analiza rezultata može dati odgovor isplati li se čekati.
 
 \subsection{Potrebe za prediktivnom analizom}
 
-\subsubsection{Predviđanje rezultata utakmica}
-- kladionice
+Osnovna potreba za prediktivnom analizom je činjenica da se u sportu uspjeh uglavnom ne procjenjuje trenutnim stanjem, nego rezultatima u nekoj budućnosti do koje tek treba doći. Zato je vrlo bitno imati predstavku kako će neki igrači doprinositi momčadi u budućnosti.
+\newline
+S druge strane - kladionice imaju konstantnu potrebu što točnijeg predviđanja rezultata utakmice i ostalih statistika. One su tvrtke koje vrijede milijune i rade s ukupnim milijunskim iznosima kod najatraktivnijih utakmica te im svaka mala optimizacija koeficijenata može donijeti ogromne iznose dodatnog novca.
 
-- klubovi: planiranje sezone
+\subsubsection{Predviđanje rezultata utakmica}
+Predviđanje rezultata utakmica idejno je osnovni, a izvedbeno najteži dio prediktivne analize. Ti podaci bitni su i kladionicama, kako bi povećale zaradu, i klubovima, za što informiranije planiranje sezone. Razvijene su različite tehnike predviđanja rezultata, od standardnih 3-klasnih klasifikatora do vremenski-ovisnih Markovljevih lanaca, posebno popularnih u nogometu.
 
 \subsubsection{Kvaliteta igrača kroz godine}
+Klubovima najzanimljiviji aspekt prediktivne analize je predviđanje kvalitete igrača kroz godine što se 
 
 \subsubsection{Rizik ozljeda}
 
