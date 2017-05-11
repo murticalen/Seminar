@@ -81,7 +81,19 @@ Simulacija taktike zanimljiva je ideja rješavanja donošenja odluka unutar utak
 
 \section{Postojeća rješenja}
 
+Tri navedena sporta odabrana su zbog njihove potpuno različite prirode - američki nogomet je situacijski sport na velikom terenu, sport u kojem se znanje odlučno štiti, a sve igrače teško je pratiti, nogomet nema čvrsto definiran tijek, u njemu je moguće, smisleno i korisno pratiti igrače, a košarka je stilom između njih, igra se na malom terenu, a može se pratiti još više stvari nego u nogometu.
+
+Za sva tri (i druge sportove) u zadnje vrijeme karakteristično je praćenje bioloških podataka igrača u cilju prevencije nepotrebnih ozljeda. Ideja je relativno jasna: u slučaju da je igrač previše umoran, rizik od ozljeda raste nekoliko puta te je takve situacije poželjno izbjeći. Najrazvijenije je u košarci, tj. NBA-u gdje se čak počinje voditi rasprava smiju li klubovi tako narušavati privatnost igrača. \cite{bio}
+
 \subsection{Košarka}
+
+\subsubsection{Analiza kvalitete šuta} 
+Najbitniji element košarke je postizanje poena, a kako šutevi za 1, 2 i 3 poena nemaju jednaku vrijednost, smišljene su nova mjere, EFG (\textit{effective field goal percentage}) i TS\% (\textit{true shooting percentage}). One, iako kvalitetne, ne opisuju do kraja stvarnost. Pucati trice točno s linije iz kornera (kuteva terena) nije isto kao pucati trice s linije ravno ispred koša. To su momčadi uočile već sredinom 1980.-ih, no nisu počele iskorištavati do iza 2010. \cite{corner3s} No, nije svaki šut svakog igrača jednak. Osim što gledamo poziciju na terenu, cilj je otkriti najbolje zone šuta za svakog igrača te najbolje šuteve općenito. A to su otvorene trice, zato što je njihova vrijednost puno veća te šutevi pored koša jer se lako realiziraju. Donekle solidan tricaš (daleko od elitnog) puca ~35\%, a da bi istu vrijednost postigao dvicama, mora gađati 3*0.35=2*x => x = 52.5\%. Posebno su grozne duge dvice, čija je efikasnost samo malo bolja od trica, a donose samo dva poena. Zato momčadi moraju forsirati trice. \cite{NBAshots} Najdalje je u implementaciji tog principa otišao generalni menadžer Houston Rocketsa Daryl Morey čiji je cilj odigrati jednu utakmicu u kojoj će njegova momčad pucati samo trice i polaganja.
+
+\subsubsection{Predviđanje kvalitete igrača na \textit{draftu}}
+Košarka je jedinstven momčadski sport po tome što jedna superzvijezda i 4 loših igrača momčadi doprinosi više nego 5 solidnih te je stoga cilj svakog NBA kluba pronaći sljedeću superzvijezdu. Budući da igrači u ligu dolaze \textit{draftom} (slijednim pravom na izbor 1 igrača od najgoreg do najboljeg kluba prošle sezone), cilj svakog kluba je odabrati najboljeg dostupnog igrača ili napraviti zamjenu za bolji izbor dajući neke trenutne ili buduće resurse. To je veliki izazov za svakog matematički pismenog pratitelja sporta te postoje doslovno stotine modela za \textit{draft}, a poveznica prikazuje neke najpoznatije. \cite{models}
+\newline
+Njihova ideja je po prirodi jednostavna: uzeti što više dostupnih podataka o igraču te temeljem prethodnih godina naći najvjerojatniju projekciju njegove karijere, no izvedbe su prilično komplicirane i relativno netočne. Uvijek se postavlja pitanje koliko utjecaja na ishod karijere pojedinca ima okolina, a koliko sam igrač.
 
 \subsection{Nogomet}
 
@@ -114,6 +126,20 @@ Osim razbijanja starih principa, formirani su i neki novi od kojih spomenimo dva
 
 \section{Nove mogućnosti}
 \section{Zaključak}
+
+Ovaj seminar dao je prikaz tematike kojom se bavi \textit{data mining} u sportu kroz tri različite perspektive triju sportova. Kako bi u potpunosti razumjeli analitički pristup, potrebno je razumjeti njegovu prošlost (tj. postupni nastanak) te potrebe i probleme koji algoritmi trebaju zadovoljiti.
+
+Neupitno je da sve sportske momčadi žele što efikasnije raspolagati svojim resursima i donositi što bolje odluke. Zbog toga, očito je da kvalitetan \textit{data mining} u sportu ima svijetlu budućnost.
+
 \dodajliteraturu{bazaLiterature}
 \section{Sažetak}
+
+Seminar prikazuje \textit{data mining} u sportu objašnjavajući njegovu povijest, sadašnja rješenja te moguće nove ideje. Najprije se navode problemi koje \textit{data mining} može rješavati, oni su, između ostaloga: raspodjela resursa, analiza kvalitete momčadi, optimiranje strategije, analiza protivnika, procjena slučajnosti, predviđanje rezultata utakmica te kvalitete igrača, kao i simulacija taktike.
+
+Seminar zatim iznosi neka od rješenja u 3 vrlo različita sporta - košarka, nogomet i američki nogomet ne ulazeći u implementacijske detalje pojedinih algoritama i principa. Najvažniji algoritmi tiču se analize kvalitete šuta u košarci, predviđanja karijere igrača u košarci i nogometu, praćenje igrača u nogometu te princip raspodjele resursa u američkom nogometu.
+
+Sljedeće poglavlje predstavlja neke od ideja za nove mogućnosti s velikim potencijalom, neke od njih su analitičari već dotaknuli, posebno ističući ideju tekstualne analize izvještaja djelatnika klubova i njihovih predviđanja kvalitete igrača.
+
+Sve kulminira zaključkom koji donosi kratki osvrt na seminar te potvrđuje ideju da \textit{data mining} u sportu ima svijetlu budućnost.
+
 \end{document}
