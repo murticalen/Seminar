@@ -38,6 +38,8 @@ Pravi rast data mininga u baseballu počinje kasnih 1990-ih i ranih 2000-ih, a n
 
 Dominacija statistike u baseballu pomiješana s američkom zabranom tradicionalnog klađenja dovela je do značajnog razvoja amaterskog data mininga za \textit{fantasy baseball} (natjecanja u kojima sudionici biraju igrače, a birana močad s najboljom ukupnom statistikom pobjeđuje, a njezin autor dobiva nagradu). Vrhunski igrači često postaju zaposlenici profesionalnih klubova. Takva intelektualna širina zaslužna je za konstantan napredak \textit{data mininga} u baseballu.
 
+Najveća godišnja konferencija sportske analitike je Sloan Sports Analytics Conference koja se svake godine održava na prestižnom sveučilištu MIT. \cite{Sloan}
+
 \subsection{Potreba za desktiptivnom analizom}
 
 Potreba za desktiptivnom analizom na bazičnoj razini prilično je očita - što više točnih informacija uvijek je bolje nego manje. No, budući da se ne možemo baviti svime, potrebno je identificirati ključne podatke koje želimo saznati.
@@ -69,14 +71,13 @@ Osnovna potreba za prediktivnom analizom je činjenica da se u sportu uspjeh ugl
 S druge strane - kladionice imaju konstantnu potrebu što točnijeg predviđanja rezultata utakmice i ostalih statistika. One su tvrtke koje vrijede milijune i rade s ukupnim milijunskim iznosima kod najatraktivnijih utakmica te im svaka mala optimizacija koeficijenata može donijeti ogromne iznose dodatnog novca.
 
 \subsubsection{Predviđanje rezultata utakmica}
-Predviđanje rezultata utakmica idejno je osnovni, a izvedbeno najteži dio prediktivne analize. Ti podaci bitni su i kladionicama, kako bi povećale zaradu, i klubovima, za što informiranije planiranje sezone. Razvijene su različite tehnike predviđanja rezultata, od standardnih 3-klasnih klasifikatora do vremenski-ovisnih Markovljevih lanaca, posebno popularnih u nogometu.
+Predviđanje rezultata utakmica idejno je osnovni, a izvedbeno najteži dio prediktivne analize. Ti podaci bitni su i kladionicama, kako bi povećale zaradu, i klubovima, za što informiranije planiranje sezone. Razvijene su različite tehnike predviđanja rezultata, od standardnih 3-klasnih klasifikatora (pobjeda, poraz, neriješeno) do vremenski-ovisnih Markovljevih lanaca, posebno popularnih u nogometu.
 
-\subsubsection{Kvaliteta igrača kroz godine}
-Klubovima najzanimljiviji aspekt prediktivne analize je predviđanje kvalitete igrača kroz godine što se 
-
-\subsubsection{Rizik ozljeda}
+\subsubsection{Kvaliteta igrača kroz godine te rizik ozljeda}
+Klubovima najzanimljiviji aspekt prediktivne analize je predviđanje kvalitete igrača kroz godine. Kad bi savršeno znali kako će se igrač razvijati, ne bi bacali novce na skupe i beskorisne transfere. Tu se u obzir uzima i rizik ozljeda određenog igrača, mnogi veliki talenti propadnu zbog nesretnih zdravstvenih okolnosti. Ideja se provodi u stvarnost nekom vrstom regresije krivulje kvalitete s obizrom na bazu podataka iz prošlosti te sličnosti igrača s drugima (visina, težina, prethodne ozljede, brzina, stil igre, dosadašnja krivulja, itd.).
 
 \subsubsection{Simulacija taktike}
+Simulacija taktike zanimljiva je ideja rješavanja donošenja odluka unutar utakmica, ona se oslanja na analizu protivnika, no njezina je bit predvidjeti kako bi protivnik reagirao kod određenog rezultata, koju će momčad izabrati i slično. Simulacija taktike izuzetno je bitna u nogometu zbog postojanja samo 3 zamjene, momčad koju trener odabere bi mogla biti što raznovrsnija kako bi odgovorila na različite mogućnosti protivnika, a onda kasnije uvoditi specijalizirane zamjene kod neke od situacija.
 
 \section{Postojeća rješenja}
 
@@ -85,8 +86,31 @@ Klubovima najzanimljiviji aspekt prediktivne analize je predviđanje kvalitete i
 \subsection{Nogomet}
 
 \subsection{Američki nogomet}
-
-\subsection{Ostali timski sportovi}
+Američki nogomet specifičan je spor zbog toga što se igra prekida nakon svake akcije te postoji mogućnost zamjene igrača nakon istih. Na terenu svaka momčad ima jedanaestoricu od kojih samo jedan ili dvoje igraju loptom u pojedinoj napadačkoj akciji (osim kod jako, jako rijetkih dodavanja unazad) zato što je dozvoljeno samo 1 dodavanje prema naprijed, no svi ostali trče ili blokiraju kako se otvorilo što više prostora za igrača s loptom. Sve akcije su tajne unutar momčadi te stoga ne postoji mnogo javnih modela za američki nogomet. Ono što znamo je da neki klubovi koriste \textit{data mining} jer se u zadnje vrijeme ruši mnogo starih neefikasnih principa (držanja osrednjih veterana, visokih odabira trkača na \textit{draftu}, favoriziranje trčanja u odnosu na dodavanje) te dodaju neki novi (kasnije navedeni).
+\newline
+Iako je većina \textit{data mininga} u NFL-u tajna, jedna od najnaprednijih sportskih \textit{data mining} stranica je specijalizirana za američki nogomet, Pro Football Focus. Također postoje doslovno stotine stranica koje se bave fantasy footballom, dozvoljenim oblikom klađenja u Americi.
+\newline
+Opišimo kako je svaki od starih principa unaprijeđen te koji su novi principi:
+\begin{itemize}
+	\item Držanje osrednjih veterana \cite{ringer_age}
+	\newline
+	Budući da u NFL-u postoji maksimalni iznos novaca koje momčadi smiju potrošiti, da bi vrhunski klubovi ostajali pri vrhu, moraju povremeno puštati osrednje starije igrače da odu te plaćati samo najbolje. Specifičnost lige je da u slučaju odlaska najboljih igrača klubovi dobiju kompenzacijske odabire na \textit{draftu}. Dok tog ograničenja nije bilo (prije 1990.-te), klubovi su zadržavali sve korisne igrače. No, sada ne mogu, te moraju postati praktički tvornice igrača kako bi ostali u vrhu.
+	\item Visoki odabir trkača na \textit{draftu} \cite{RBs}
+	\newline
+	Budući da je liga počela favorizirati dodavanja te da je skauting bolji nego ikada, u NFL-u se više ne isplati odabirati trkače visoko zato što ih se lako može naći vrlo jeftino, isključujući vrhunske talente. Trkači imaju kraće karijere nego druge napadačke pozicije zbog izloženosti ozljedama te je stoga i vremenska vrijednost takvog odabira mala. \cite{RBs2}
+	\item Favoriziranje trčanja u odnosu na dodavanje
+	\newline
+	Zbog novih pravila koja zaštićuju zdravlje igrača, NFL momčadima je sve lakše izvoditi uspješna dodavanja koja su gotovo uvijek dalja nego uspješne trke te se stoga očito osjeti velika promjena u stilu igre. \cite{RBs}
+\end{itemize}
+Osim razbijanja starih principa, formirani su i neki novi od kojih spomenimo dva najbitnija:
+\begin{itemize}
+	\item Shvaćanje vrijednosti napadačka linije
+	\newline
+	Napadačka linija je 5 igrača u sredini svake napadačke akcije koji ne smiju napredovati s loptom u rukama (niti je hvatati) te su zato dugo vremena bili potcijenjeni. Njihov zadatak je čuvanje dodavača ili trkača od protivničke obrane. Međutim, budući da je dodavač najbitniji i najplaćeniji igrač svakog kluba, logično je da ga se mora što bolje zaštiti, pa makar i pod cijenu slabljenja drugih dijelova momčadi. Empirijski je dokazano da klubovi koji više resursa utroše u ofenzivnu liniju imaju bolje rezultate dodavanja. \cite{OL}
+	\item Izbacivanje srednje dugih dodavanja \cite{Deep}
+	\newline
+	Nešto potpuno novo u NFL-u, idejno preuzeto iz košarke (pucanje mnogo trica), je izbacivanje srednje dugih dodavanja u korist dugačkih. Statistika pokazuje da su srednje duga dodavanja slično uspješna/neuspješna, a duga daju veću korist. Duga dodavanja imaju veću varijancu te se tako mogu nadoknaditi veliki zaostaci, baš kao New England Patriotsi u Super Bowlu ove godine. \cite{NEP}
+\end{itemize}
 
 \section{Nove mogućnosti}
 \section{Zaključak}
